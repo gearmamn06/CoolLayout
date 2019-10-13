@@ -9,13 +9,13 @@ import UIKit
 
 public extension NSLayoutConstraint {
     
-    func updateMultiply(_ newValue: CGFloat) -> NSLayoutConstraint {
+    func updateMultiply(_ newValue: CGFloat, shouldUpdate: Bool = false) -> NSLayoutConstraint {
         
         if self.isActive {
             NSLayoutConstraint.deactivate([self])
         }
         
-        let newConstraint = NSLayoutConstraint(item: firstItem as Any,
+        let newConstraint = NSLayoutConstraint(item: firstItem,
                                                attribute: firstAttribute,
                                                relatedBy: relation,
                                                toItem: secondItem,
@@ -26,18 +26,21 @@ public extension NSLayoutConstraint {
         newConstraint.shouldBeArchived = shouldBeArchived
         newConstraint.identifier = identifier
         
-        NSLayoutConstraint.activate([newConstraint])
+        if shouldUpdate {
+            NSLayoutConstraint.activate([newConstraint])
+        }
+        
         return newConstraint
     }
     
     
-    func updateConstant(_ newValue: CGFloat) -> NSLayoutConstraint {
+    func updateConstant(_ newValue: CGFloat, shouldUpdate: Bool = false) -> NSLayoutConstraint {
         
         if self.isActive {
             NSLayoutConstraint.deactivate([self])
         }
         
-        let newConstraint = NSLayoutConstraint(item: firstItem as Any,
+        let newConstraint = NSLayoutConstraint(item: firstItem,
                                                attribute: firstAttribute,
                                                relatedBy: relation,
                                                toItem: secondItem,
@@ -48,7 +51,10 @@ public extension NSLayoutConstraint {
         newConstraint.shouldBeArchived = shouldBeArchived
         newConstraint.identifier = identifier
         
-        NSLayoutConstraint.activate([newConstraint])
+        if shouldUpdate {
+            NSLayoutConstraint.activate([newConstraint])
+        }
+        
         return newConstraint
     }
     

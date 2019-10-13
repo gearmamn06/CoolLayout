@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B925B20235326D3004FB94F /* NSLayoutConstraint_ExtensionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B925B1E235326C1004FB94F /* NSLayoutConstraint_ExtensionTest.swift */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
@@ -30,6 +31,7 @@
 		085774EF6178E103C5BBE67B /* Pods-CoolLayout_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoolLayout_Tests.release.xcconfig"; path = "Target Support Files/Pods-CoolLayout_Tests/Pods-CoolLayout_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		23802B66EEF2DD6412DA0370 /* Pods-CoolLayout_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoolLayout_Example.release.xcconfig"; path = "Target Support Files/Pods-CoolLayout_Example/Pods-CoolLayout_Example.release.xcconfig"; sourceTree = "<group>"; };
 		27F18C7C4EBC9A29E266B85D /* Pods-CoolLayout_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoolLayout_Tests.debug.xcconfig"; path = "Target Support Files/Pods-CoolLayout_Tests/Pods-CoolLayout_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		2B925B1E235326C1004FB94F /* NSLayoutConstraint_ExtensionTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSLayoutConstraint_ExtensionTest.swift; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* CoolLayout_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoolLayout_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 		607FACE81AFB9204008FA782 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				2B925B1E235326C1004FB94F /* NSLayoutConstraint_ExtensionTest.swift */,
 				607FACEB1AFB9204008FA782 /* NSLayoutConstraintFormulaTest.swift */,
 				607FACE91AFB9204008FA782 /* Supporting Files */,
 			);
@@ -336,6 +339,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				607FACEC1AFB9204008FA782 /* NSLayoutConstraintFormulaTest.swift in Sources */,
+				2B925B20235326D3004FB94F /* NSLayoutConstraint_ExtensionTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

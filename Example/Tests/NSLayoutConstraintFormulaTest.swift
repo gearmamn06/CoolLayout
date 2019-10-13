@@ -432,10 +432,31 @@ extension NSLayoutConstraintFormulaTest {
 fileprivate extension NSLayoutConstraint {
     
     func equal(with: NSLayoutConstraint) -> Bool {
-        guard let first = self.firstItem as? UIView, let second = with.firstItem as? UIView else {
-            return false
+        guard let first = self.firstItem as? UIView,
+            let firstOther = with.firstItem as? UIView,
+            let second = self.secondItem as? UIView,
+            let secondOther = with.secondItem as? UIView else {
+                return firstAttribute == with.firstAttribute
+                    && relation == with.relation
+                    && secondAttribute == with.secondAttribute
+                    && multiplier == with.multiplier
+                    && constant == with.constant
         }
-        return first == second
+        
+        if #available(iOS 10.0, *) {
+            return first == firstOther
+            && second == secondOther
+            && self.firstAnchor == with.firstAnchor
+            && self.secondAnchor == with.secondAnchor
+            && self.firstAttribute == with.firstAttribute
+            && self.relation == with.relation
+            && self.secondAttribute == with.secondAttribute
+            && self.multiplier == with.multiplier
+            && self.constant == with.constant
+        }
+        
+        return first == firstOther
+            && second == secondOther
             && self.firstAttribute == with.firstAttribute
             && self.relation == with.relation
             && self.secondAttribute == with.secondAttribute
