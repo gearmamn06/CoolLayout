@@ -1,0 +1,6 @@
+framework module CoolLayout {
+  umbrella header "CoolLayout-umbrella.h"
+
+  export *
+  module * { export * }
+}

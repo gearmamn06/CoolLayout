@@ -1,0 +1,16 @@
+PODS:
+  - CoolLayout (0.1.0)
+
+DEPENDENCIES:
+  - CoolLayout (from `../`)
+
+EXTERNAL SOURCES:
+  CoolLayout:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  CoolLayout: 05c76b581fd77fa94ca4737601689c5004486ed6
+
+PODFILE CHECKSUM: 73b8612ece6341b921e322fb58f1d67a555ef153
+
+COCOAPODS: 1.8.0.beta.1

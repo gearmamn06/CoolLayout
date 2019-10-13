@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'CoolLayout_Example' do
+  pod 'CoolLayout', :path => '../'
+
+  target 'CoolLayout_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
