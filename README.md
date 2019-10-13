@@ -22,7 +22,7 @@ pod 'CoolLayout'
 
 ## Author
 
-gearmamn06@gmail.com, sudo.park@kakaocorp.com
+gearmamn06@gmail.com
 
 ## License
 
