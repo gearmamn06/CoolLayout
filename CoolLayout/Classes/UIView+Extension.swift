@@ -37,6 +37,9 @@ extension NSCoding where Self: UIView {
         }
     }
     
+    public static func lazy(_ initFunction: () -> Self) -> Self {
+        return initFunction()
+    }
 
 }
 
