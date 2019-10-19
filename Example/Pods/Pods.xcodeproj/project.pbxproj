@@ -14,6 +14,7 @@
 		7F56EA0DD2E410E2F9C01E920F46C6D1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
 		BB622FCCD2B4ACA8A20439E2241442ED /* CoolLayout-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D0C64B85B19736B85A6F6D3EFD205CE /* CoolLayout-dummy.m */; };
 		BE39F7AFC7651EE13681765F1F155FC1 /* Pods-CoolLayout_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C220EF70F99DE0B2BE18B482E0738AA /* Pods-CoolLayout_Tests-dummy.m */; };
+		C2692563235ADCF1002FA329 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2692562235ADCF1002FA329 /* UIView+Extension.swift */; };
 		C49B26C71DCE718628812A93416E16A9 /* Pods-CoolLayout_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 67743B340E5F89F9F71030E117B6D6F8 /* Pods-CoolLayout_Example-dummy.m */; };
 		C8CEF66027CBA3B18477D5983B1890A9 /* Pods-CoolLayout_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = CE30C94263FA1D372D63F77DDFCE3F68 /* Pods-CoolLayout_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D2140FD8A74429E5681BC5A51D33AF3E /* Pods-CoolLayout_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A93F9FEBDA23624A3F6B1A7A04D5A921 /* Pods-CoolLayout_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -64,6 +65,7 @@
 		B45F90FBDB5C8F943DB72849A3C8F0DF /* Pods-CoolLayout_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CoolLayout_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		BB646405C9650EAAC1D9E0A00366502B /* Pods-CoolLayout_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-CoolLayout_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		C0FB85059EBF0DF0F4A890953A4B740E /* Pods-CoolLayout_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CoolLayout_Example-Info.plist"; sourceTree = "<group>"; };
+		C2692562235ADCF1002FA329 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIView+Extension.swift"; path = "CoolLayout/Classes/UIView+Extension.swift"; sourceTree = "<group>"; };
 		CE30C94263FA1D372D63F77DDFCE3F68 /* Pods-CoolLayout_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-CoolLayout_Example-umbrella.h"; sourceTree = "<group>"; };
 		D47EA3429C08E18AA61D337C48160B0C /* Pods-CoolLayout_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CoolLayout_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		DBDFC01CBCF0F815D359C5B3C6B4FAC2 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 			children = (
 				2B925B1823531C4D004FB94F /* NSLayoutConstraint+Extension.swift */,
 				2B925B1A23531C6D004FB94F /* NSLayoutConstraintFormula.swift */,
+				C2692562235ADCF1002FA329 /* UIView+Extension.swift */,
 				3B68384CAB0D0D5AF90E5B159B9B87AF /* Pod */,
 				7B371BF652AB57BA034548CFF0285795 /* Support Files */,
 			);
@@ -383,6 +386,7 @@
 			files = (
 				BB622FCCD2B4ACA8A20439E2241442ED /* CoolLayout-dummy.m in Sources */,
 				2B925B1923531C4D004FB94F /* NSLayoutConstraint+Extension.swift in Sources */,
+				C2692563235ADCF1002FA329 /* UIView+Extension.swift in Sources */,
 				2B925B1B23531C6D004FB94F /* NSLayoutConstraintFormula.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

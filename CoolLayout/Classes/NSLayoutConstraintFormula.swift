@@ -67,7 +67,7 @@ public func + (_ half: HalfNSLayoutConstraint<NSLayoutDimension>,
 }
 
 
-// MARK: Equal operation
+// MARK: - Equal operation
 
 public func == <AnchorType>(_ target: NSLayoutAnchor<AnchorType>,
                      _ half: HalfNSLayoutConstraint<AnchorType>) -> NSLayoutConstraint {
@@ -103,7 +103,7 @@ public func == (_ target: NSLayoutDimension, _ constant: CGFloat) -> NSLayoutCon
 
 
 
-// MARK: Less than ro Equal
+// MARK: - Less than ro Equal
 
 public func <= <AnchorType> (_ target: NSLayoutAnchor<AnchorType>,
                       _ half: HalfNSLayoutConstraint<AnchorType>) -> NSLayoutConstraint {
@@ -137,7 +137,7 @@ public func <= (_ target: NSLayoutDimension,
 
 
 
-// MARK: Greater than or Equal
+// MARK: - Greater than or Equal
 
 public func >= <AnchorType> (_ target: NSLayoutAnchor<AnchorType>,
                       _ half: HalfNSLayoutConstraint<AnchorType>) -> NSLayoutConstraint {
