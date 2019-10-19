@@ -10,27 +10,8 @@ import UIKit
 
 import CoolLayout
 
-fileprivate enum Label {
-    static let headLine: (UILabel) -> Void = {
-        $0.textColor = UIColor.black
-        $0.font = UIFont.boldSystemFont(ofSize: 30)
-    }
-    
-    static let centerAlgin: (UILabel) -> Void = {
-        $0.textAlignment = .center
-    }
-}
 
-fileprivate enum View {
-    static let yellowWithDarkBorder: (UIView) -> Void = {
-        $0.backgroundColor = UIColor.yellow
-        $0.layer.borderColor = UIColor.black.cgColor
-        $0.layer.borderWidth = 2
-    }
-}
-
-
-class NewStyleViewController: UIViewController {
+class StackEmbedViewController: UIViewController {
     
     private let stackView = UIStackView {
         $0.alignment = .fill
@@ -62,10 +43,10 @@ class NewStyleViewController: UIViewController {
                 $0.text = "row: \(value)"
             }
             label.apply([
-                Label.headLine,
-                Label.centerAlgin
+                Deco.Label.headLine,
+                Deco.Label.centerAlgin
             ])
-            .apply(View.yellowWithDarkBorder)
+            .apply(Deco.View.yellowWithDarkBorder)
             
             stackView.addArrangedSubview(label)
         }

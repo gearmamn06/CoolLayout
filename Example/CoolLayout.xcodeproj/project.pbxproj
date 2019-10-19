@@ -10,11 +10,13 @@
 		2B613728235B54BD002FF19A /* UIView_ExtensionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B613726235B5440002FF19A /* UIView_ExtensionTest.swift */; };
 		2B925B20235326D3004FB94F /* NSLayoutConstraint_ExtensionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B925B1E235326C1004FB94F /* NSLayoutConstraint_ExtensionTest.swift */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
-		607FACD81AFB9204008FA782 /* OldStyleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* OldStyleViewController.swift */; };
+		607FACD81AFB9204008FA782 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* BaseViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACEC1AFB9204008FA782 /* NSLayoutConstraintFormulaTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* NSLayoutConstraintFormulaTest.swift */; };
-		C2692565235B388C002FA329 /* NewStyleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2692564235B388C002FA329 /* NewStyleViewController.swift */; };
+		C2692565235B388C002FA329 /* StackEmbedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2692564235B388C002FA329 /* StackEmbedViewController.swift */; };
+		C269256B235B7565002FA329 /* TableEmbedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C269256A235B7565002FA329 /* TableEmbedViewController.swift */; };
+		C269256D235B75B3002FA329 /* Deco.swift in Sources */ = {isa = PBXBuildFile; fileRef = C269256C235B75B3002FA329 /* Deco.swift */; };
 		D06D001FB09612FA32E2E595 /* Pods_CoolLayout_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC29543652C1D539D016C224 /* Pods_CoolLayout_Tests.framework */; };
 		E00906C69D2924EC9F8C8A06 /* Pods_CoolLayout_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3AD4A204A8F5333CF73C12C /* Pods_CoolLayout_Example.framework */; };
 /* End PBXBuildFile section */
@@ -38,7 +40,7 @@
 		607FACD01AFB9204008FA782 /* CoolLayout_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoolLayout_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		607FACD71AFB9204008FA782 /* OldStyleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OldStyleViewController.swift; sourceTree = "<group>"; };
+		607FACD71AFB9204008FA782 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		607FACDA1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		607FACDC1AFB9204008FA782 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		607FACE51AFB9204008FA782 /* CoolLayout_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoolLayout_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -47,7 +49,9 @@
 		748A55CC5C1078C652D99422 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		950B6372A3C8FC423BED9004 /* CoolLayout.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = CoolLayout.podspec; path = ../CoolLayout.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		BC29543652C1D539D016C224 /* Pods_CoolLayout_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoolLayout_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C2692564235B388C002FA329 /* NewStyleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewStyleViewController.swift; sourceTree = "<group>"; };
+		C2692564235B388C002FA329 /* StackEmbedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackEmbedViewController.swift; sourceTree = "<group>"; };
+		C269256A235B7565002FA329 /* TableEmbedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableEmbedViewController.swift; sourceTree = "<group>"; };
+		C269256C235B75B3002FA329 /* Deco.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deco.swift; sourceTree = "<group>"; };
 		D3AD4A204A8F5333CF73C12C /* Pods_CoolLayout_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoolLayout_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2E8F81B2110B7A9F9FD4BD4 /* Pods-CoolLayout_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoolLayout_Example.debug.xcconfig"; path = "Target Support Files/Pods-CoolLayout_Example/Pods-CoolLayout_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		ED249E4BC0F85AD4C9F1D176 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
@@ -97,9 +101,11 @@
 		607FACD21AFB9204008FA782 /* Example for CoolLayout */ = {
 			isa = PBXGroup;
 			children = (
+				C269256C235B75B3002FA329 /* Deco.swift */,
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
-				607FACD71AFB9204008FA782 /* OldStyleViewController.swift */,
-				C2692564235B388C002FA329 /* NewStyleViewController.swift */,
+				607FACD71AFB9204008FA782 /* BaseViewController.swift */,
+				C2692564235B388C002FA329 /* StackEmbedViewController.swift */,
+				C269256A235B7565002FA329 /* TableEmbedViewController.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
@@ -335,8 +341,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C2692565235B388C002FA329 /* NewStyleViewController.swift in Sources */,
-				607FACD81AFB9204008FA782 /* OldStyleViewController.swift in Sources */,
+				C2692565235B388C002FA329 /* StackEmbedViewController.swift in Sources */,
+				C269256B235B7565002FA329 /* TableEmbedViewController.swift in Sources */,
+				C269256D235B75B3002FA329 /* Deco.swift in Sources */,
+				607FACD81AFB9204008FA782 /* BaseViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
