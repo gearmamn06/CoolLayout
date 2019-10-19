@@ -11,7 +11,7 @@ import UIKit
 
 extension NSCoding where Self: UIViewController {
     
-    public init(initClosure: (UIViewController) -> Void) {
+    public init(initClosure: (Self) -> Void) {
         self.init()
         initClosure(self)
     }
