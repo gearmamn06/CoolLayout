@@ -1,0 +1,209 @@
+//
+//  UIView_ExtensionTest.swift
+//  CoolLayout_Example
+//
+//  Created by ParkHyunsoo on 2019/10/19.
+//  Copyright © 2019 CocoaPods. All rights reserved.
+//
+
+import XCTest
+import CoolLayout
+
+
+class UIView_ExtensionTest: XCTestCase {
+    
+    var textColor: (UILabel) -> Void = {
+        $0.textColor = .red
+    }
+    
+    var font: (UILabel) -> Void = {
+        $0.font = UIFont.systemFont(ofSize: 20)
+    }
+    
+    var backgroundColor: (UIView) -> Void = {
+        $0.backgroundColor = UIColor.green
+    }
+    
+    var userInterfaceEnabled: (UIView) -> Void = {
+        $0.isUserInteractionEnabled = false
+    }
+    
+    override func setUp() {}
+    
+    override func tearDown() {}
+}
+
+
+// MARK: - test view initializer with closures
+
+extension UIView_ExtensionTest {
+    
+    func test_viewCreation() {
+        // given
+        // when
+        let view = UIView.autoLayout
+        let label = UILabel.autoLayout
+        let imageView = UIImageView.autoLayout
+        // then
+        XCTAssertNotNil(view)
+        XCTAssertNotNil(label)
+        XCTAssertTrue(label is UILabel)
+        XCTAssertTrue(imageView is UIImageView)
+    }
+    
+    func test_initViewWithSingleClosure() {
+        // given
+        // when
+        let label = UILabel {
+            $0.textColor = UIColor.red
+            $0.backgroundColor = UIColor.green
+        }
+        
+        // then
+        XCTAssertEqual(label.textColor, UIColor.red)
+        XCTAssertEqual(label.backgroundColor, UIColor.green)
+    }
+    
+    func test_initViewwithMultiClosured() {
+        // given
+        // when
+        let label = UILabel(autoLayout: self.textColor, self.font, self.backgroundColor)
+        
+        // then
+        XCTAssertEqual(label.textColor, UIColor.red)
+        XCTAssertEqual(label.backgroundColor, UIColor.green)
+        XCTAssertEqual(label.font, UIFont.systemFont(ofSize: 20))
+    }
+    
+    func test_initViewWithClosureArray() {
+        // given
+        let decorations = [
+            self.textColor,
+            self.font,
+            self.backgroundColor
+        ]
+        
+        // when
+        let label = UILabel(autoLayout: decorations)
+        
+        // then
+        XCTAssertEqual(label.textColor, UIColor.red)
+        XCTAssertEqual(label.backgroundColor, UIColor.green)
+        XCTAssertEqual(label.font, UIFont.systemFont(ofSize: 20))
+    }
+}
+
+
+// MARK: - test apply decoration to view
+
+extension UIView_ExtensionTest {
+    
+    
+    func test_applyViewLevelSingleDecoration() {
+        // given
+        let view = UIView.autoLayout
+        
+        // when
+        view.apply {
+            $0.backgroundColor = UIColor.red
+        }
+        
+        // then
+        XCTAssertEqual(view.backgroundColor, UIColor.red)
+    }
+    
+    func test_applyViewLevelDecoration() {
+        // given
+        let label = UILabel.autoLayout
+        
+        // when
+        label.apply(backgroundColor)
+        
+        // then
+        XCTAssertEqual(label.backgroundColor, UIColor.green)
+    }
+    
+    func test_applyViewLevelMultipleDecorations() {
+        // given
+        let view = UIView.autoLayout
+        
+        // when
+        view.apply(backgroundColor, userInterfaceEnabled)
+        
+        // then
+        XCTAssertEqual(view.backgroundColor, UIColor.green)
+        XCTAssertEqual(view.isUserInteractionEnabled, false)
+    }
+    
+    func test_applyViewLevelDecorationUsingArray() {
+        // given
+        let view = UIView.autoLayout
+        let decorations = [
+            backgroundColor, userInterfaceEnabled
+        ]
+        
+        // when
+        view.apply(decorations)
+        
+        // then
+        XCTAssertEqual(view.backgroundColor, UIColor.green)
+        XCTAssertEqual(view.isUserInteractionEnabled, false)
+    }
+    
+    func test_applySelfLevelSingleDecoration() {
+        // given
+        let label = UILabel.autoLayout
+        
+        // when
+        label.apply {
+            $0.textColor = UIColor.red
+        }
+        
+        // then
+        XCTAssertEqual(label.textColor, UIColor.red)
+    }
+    
+    func test_applySelfLevelMultipleDecorations() {
+        // given
+        let label = UILabel.autoLayout
+        
+        // when
+        label.apply(textColor, font)
+        
+        // then
+        XCTAssertEqual(label.textColor, UIColor.red)
+        XCTAssertEqual(label.font, UIFont.systemFont(ofSize: 20))
+    }
+    
+    
+    func test_applySelfLevelDecorationUsingArray() {
+        // given
+        let label = UILabel.autoLayout
+        let decorations = [textColor, font]
+        
+        // when
+        label.apply(decorations)
+        
+        // then
+        XCTAssertEqual(label.textColor, UIColor.red)
+        XCTAssertEqual(label.font, UIFont.systemFont(ofSize: 20))
+    }
+    
+    func test_applyDecorationLevelCombine() {
+        // given
+        let label = UILabel.autoLayout
+        
+        // when
+        label.apply {
+            $0.textColor = UIColor.red
+        }
+        .apply {
+            $0.backgroundColor = UIColor.black
+        }
+        
+        
+        // then
+        XCTAssertEqual(label.textColor, UIColor.red)
+        XCTAssertEqual(label.backgroundColor, UIColor.black)
+    }
+}

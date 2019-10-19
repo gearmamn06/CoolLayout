@@ -37,6 +37,14 @@ extension NSCoding where Self: UIView {
         }
     }
     
+
+}
+
+
+// MARK: - apply decorations
+
+extension NSCoding where Self: UIView {
+    
     @discardableResult
     public func apply(_ decorating: (Self) -> Void) -> Self {
         decorating(self)
@@ -80,11 +88,4 @@ extension NSCoding where Self: UIView {
         }
         return self
     }
-}
-
-
-public extension UIView {
-    
-    
-    
 }
