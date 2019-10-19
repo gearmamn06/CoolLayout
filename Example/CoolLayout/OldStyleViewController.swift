@@ -53,7 +53,7 @@ class OldStyleViewController: UIViewController {
     @objc private func showNextViewController() {
         
         let navigationController = UINavigationController(navigationBarClass: nil, toolbarClass: nil)
-        let dest: NewStyleViewController = NewStyleViewController.instance {
+        let dest = NewStyleViewController {
             $0.view.backgroundColor = UIColor.white
         }
         navigationController.pushViewController(dest, animated: true)

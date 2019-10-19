@@ -11,61 +11,74 @@ import UIKit
 
 extension NSCoding where Self: UIView {
 
-    
-    public static var cool: Self {
+    public static var autoLayout: Self {
         let view = self.init()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }
     
-    public static func cool(_ decorating: ((Self) -> Void)? = nil) -> Self {
-        let view = cool
-        decorating?(view)
-        return view
+    public init(autoLayout: (Self) -> Void) {
+        self.init()
+        self.translatesAutoresizingMaskIntoConstraints = false
+        autoLayout(self)
     }
     
-    public static func cool(_ docoratings: ((Self) -> Void)...) -> Self {
-        let view = cool
-        docoratings.forEach {
-            $0(view)
+    public init(autoLayout: ((Self) -> Void)...) {
+        self.init()
+        autoLayout.forEach {
+            $0(self)
         }
-        return view
     }
     
-    public func apply(_ decorating: (Self) -> Void) {
+    public init(autoLayout: [((Self) -> Void)]) {
+        self.init()
+        autoLayout.forEach {
+            $0(self)
+        }
+    }
+    
+    @discardableResult
+    public func apply(_ decorating: (Self) -> Void) -> Self {
         decorating(self)
+        return self
     }
     
-    public func apply(_ decoratings: ((Self) -> Void)...) {
+    @discardableResult
+    public func apply(_ decoratings: ((Self) -> Void)...) -> Self {
         decoratings.forEach {
             $0(self)
         }
+        return self
     }
 
-    public func apply(_ decoratings: [(Self) -> Void]) {
+    @discardableResult
+    public func apply(_ decoratings: [(Self) -> Void]) -> Self {
         decoratings.forEach {
             $0(self)
         }
-    }
-    
-//    func apply()
-    
-    @discardableResult
-    public static func << (_ view: Self, decorating: (Self) -> Void) -> Self {
-        decorating(view)
-        return view
+        return self
     }
     
     @discardableResult
-    public static func + (view: Self, next: (UIView) -> Void) -> Self {
-        next(view)
-        return view
+    public func apply(_ decorating: (UIView) -> Void) -> Self {
+        decorating(self)
+        return self
     }
     
     @discardableResult
-    public static func + (view: Self, next: (Self) -> Void) -> Self {
-        next(view)
-        return view
+    public func apply(_ decoratings: ((UIView) -> Void)...) -> Self {
+        decoratings.forEach {
+            $0(self)
+        }
+        return self
+    }
+
+    @discardableResult
+    public func apply(_ decoratings: [(UIView) -> Void]) -> Self {
+        decoratings.forEach {
+            $0(self)
+        }
+        return self
     }
 }
 

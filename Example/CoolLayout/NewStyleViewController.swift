@@ -31,9 +31,8 @@ fileprivate enum View {
 
 
 class NewStyleViewController: UIViewController {
-
     
-    private let stackView: UIStackView = .cool {
+    private let stackView = UIStackView {
         $0.alignment = .fill
         $0.distribution = .fillEqually
         $0.axis = .vertical
@@ -55,11 +54,16 @@ class NewStyleViewController: UIViewController {
     private func insertLabels() {
         (0..<10).forEach { value in
             
-            let label = UILabel.cool {
+            let label = UILabel {
                 $0.numberOfLines = 1
                 $0.text = "row: \(value)"
             }
-            label << Label.headLine + Label.centerAlgin + View.yellowWithDarkBorder
+            label.apply([
+                Label.headLine,
+                Label.centerAlgin
+            ])
+            .apply(View.yellowWithDarkBorder)
+            
             stackView.addArrangedSubview(label)
         }
     }

@@ -11,16 +11,8 @@ import UIKit
 
 extension NSCoding where Self: UIViewController {
     
-    public static var instance: Self {
-        return instance()
-    }
-}
-
-extension UIViewController {
-    
-    public static func instance<T: UIViewController>(_ initClosure: ((UIViewController) -> Void)? = nil) -> T {
-        let controller = T.init()
-        initClosure?(controller)
-        return controller
+    public init(initClosure: (UIViewController) -> Void) {
+        self.init()
+        initClosure(self)
     }
 }
