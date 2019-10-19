@@ -14,6 +14,23 @@ import UIKit
  d: ==, >=, <= with constant and multiplier
  */
 
+fileprivate extension NSLayoutConstraint {
+    
+    private var shouldActive: Bool {
+        if let firstView = self.firstItem as? UIView {
+            return firstView.shouldActiveWhenConstraintMade
+        }
+        return false
+    }
+    
+    func activeOrNot() -> NSLayoutConstraint {
+        if shouldActive {
+            self.isActive = true
+        }
+        return self
+    }
+}
+
 public class HalfNSLayoutConstraint<AnchorType: AnyObject> {
     
     unowned(unsafe) let referenceAnchor: NSLayoutAnchor<AnchorType>
@@ -69,6 +86,7 @@ public func + (_ half: HalfNSLayoutConstraint<NSLayoutDimension>,
 
 // MARK: - Equal operation
 
+@discardableResult
 public func == <AnchorType>(_ target: NSLayoutAnchor<AnchorType>,
                      _ half: HalfNSLayoutConstraint<AnchorType>) -> NSLayoutConstraint {
     
@@ -76,18 +94,20 @@ public func == <AnchorType>(_ target: NSLayoutAnchor<AnchorType>,
         if let xAxisTarget = target as? NSLayoutXAxisAnchor,
             let halfAnchor = half.referenceAnchor as? NSLayoutXAxisAnchor {
             return xAxisTarget.constraint(equalToSystemSpacingAfter: halfAnchor,
-                                   multiplier: half.multiplier)
+                                          multiplier: half.multiplier).activeOrNot()
         }else if let yAxisTarget = target as? NSLayoutYAxisAnchor,
             let halfAnchor = half.referenceAnchor as? NSLayoutYAxisAnchor {
             return yAxisTarget.constraint(equalToSystemSpacingBelow: halfAnchor,
                                           multiplier: half.multiplier)
+                .activeOrNot()
         }
     }
     
     return target.constraint(equalTo: half.referenceAnchor, constant: half.constant)
+        .activeOrNot()
 }
 
-
+@discardableResult
 public func == (_ target: NSLayoutDimension,
          _ half: HalfNSLayoutConstraint<NSLayoutDimension>) -> NSLayoutConstraint {
     
@@ -95,16 +115,20 @@ public func == (_ target: NSLayoutDimension,
         .constraint(equalTo: half.referenceAnchor as! NSLayoutDimension,
                     multiplier: half.multiplier,
                     constant: half.constant)
+        .activeOrNot()
 }
 
+@discardableResult
 public func == (_ target: NSLayoutDimension, _ constant: CGFloat) -> NSLayoutConstraint {
     return target.constraint(equalToConstant: constant)
+        .activeOrNot()
 }
 
 
 
 // MARK: - Less than ro Equal
 
+@discardableResult
 public func <= <AnchorType> (_ target: NSLayoutAnchor<AnchorType>,
                       _ half: HalfNSLayoutConstraint<AnchorType>) -> NSLayoutConstraint {
     
@@ -113,18 +137,21 @@ public func <= <AnchorType> (_ target: NSLayoutAnchor<AnchorType>,
             let halfAnchor = half.referenceAnchor as? NSLayoutXAxisAnchor {
             return xAxisTarget.constraint(lessThanOrEqualToSystemSpacingAfter: halfAnchor,
                                           multiplier: half.multiplier)
+                .activeOrNot()
         }else if let yAxisTarget = target as? NSLayoutYAxisAnchor,
             let halfAnchor = half.referenceAnchor as? NSLayoutYAxisAnchor {
             return yAxisTarget.constraint(lessThanOrEqualToSystemSpacingBelow: halfAnchor,
                                           multiplier: half.multiplier)
+                .activeOrNot()
         }
     }
     
     return target.constraint(lessThanOrEqualTo: half.referenceAnchor,
                              constant: half.constant)
+        .activeOrNot()
 }
 
-
+@discardableResult
 public func <= (_ target: NSLayoutDimension,
          _ half: HalfNSLayoutConstraint<NSLayoutDimension>) -> NSLayoutConstraint {
     
@@ -132,6 +159,7 @@ public func <= (_ target: NSLayoutDimension,
         .constraint(lessThanOrEqualTo: half.referenceAnchor as! NSLayoutDimension,
                     multiplier: half.multiplier,
                     constant: half.constant)
+        .activeOrNot()
 }
 
 
@@ -139,6 +167,7 @@ public func <= (_ target: NSLayoutDimension,
 
 // MARK: - Greater than or Equal
 
+@discardableResult
 public func >= <AnchorType> (_ target: NSLayoutAnchor<AnchorType>,
                       _ half: HalfNSLayoutConstraint<AnchorType>) -> NSLayoutConstraint {
     
@@ -147,19 +176,23 @@ public func >= <AnchorType> (_ target: NSLayoutAnchor<AnchorType>,
             let halfAnchor = half.referenceAnchor as? NSLayoutXAxisAnchor {
             return xAxisTarget.constraint(greaterThanOrEqualToSystemSpacingAfter: halfAnchor,
                                           multiplier: half.multiplier)
+                .activeOrNot()
         }else if let yAxisTarget = target as? NSLayoutYAxisAnchor,
             let halfAnchor = half.referenceAnchor as? NSLayoutYAxisAnchor {
             return yAxisTarget.constraint(greaterThanOrEqualToSystemSpacingBelow: halfAnchor,
                                           multiplier: half.multiplier)
+                .activeOrNot()
         }
     }
     
     return target
         .constraint(greaterThanOrEqualTo: half.referenceAnchor,
                     constant: half.constant)
+        .activeOrNot()
 }
 
 
+@discardableResult
 public func >= (_ target: NSLayoutDimension,
          _ half: HalfNSLayoutConstraint<NSLayoutDimension>) -> NSLayoutConstraint {
     
@@ -167,5 +200,6 @@ public func >= (_ target: NSLayoutDimension,
         .constraint(greaterThanOrEqualTo: half.referenceAnchor as! NSLayoutDimension,
                     multiplier: half.multiplier,
                     constant: half.constant)
+        .activeOrNot()
 }
 

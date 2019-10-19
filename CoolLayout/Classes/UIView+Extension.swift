@@ -92,3 +92,26 @@ extension NSCoding where Self: UIView {
         return self
     }
 }
+
+
+// MARK: - extension for active constraints
+
+extension UIView {
+    
+    fileprivate struct FlagHolder {
+        static var flagMap: [Int: Bool] = [:]
+    }
+    
+    var shouldActiveWhenConstraintMade: Bool {
+        let key = self.hash
+        return FlagHolder.flagMap[key] ?? false
+    }
+    
+    
+    public func activate(_ buildConstraint: (UIView) -> Void) {
+        let key = self.hash
+        FlagHolder.flagMap[key] = true
+        buildConstraint(self)
+        FlagHolder.flagMap[key] = false
+    }
+}

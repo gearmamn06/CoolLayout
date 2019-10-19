@@ -42,10 +42,13 @@ class NewStyleViewController: UIViewController {
         super.viewDidLoad()
         
         self.view.addSubview(stackView)
-        (stackView.leadingAnchor == self.view.leadingAnchor + 0).isActive = true
-        (stackView.trailingAnchor == self.view.trailingAnchor + 0).isActive = true
-        (stackView.topAnchor == self.view.topAnchor + 0).isActive = true
-        (stackView.bottomAnchor == self.view.bottomAnchor + 0).isActive = true
+        
+        self.stackView.activate {
+            $0.leadingAnchor == self.view.leadingAnchor + 0
+            $0.trailingAnchor == self.view.trailingAnchor + 0
+            $0.topAnchor == self.view.topAnchor + 0
+            $0.bottomAnchor == self.view.bottomAnchor + 0
+        }
         
         insertLabels()
     }

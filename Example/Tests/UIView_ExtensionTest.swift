@@ -222,3 +222,37 @@ extension UIView_ExtensionTest {
         XCTAssertEqual(label.backgroundColor, UIColor.black)
     }
 }
+
+
+// MARK: - Test active constraints
+
+extension UIView_ExtensionTest {
+    
+    func test_activeBatchConstraints() {
+        // given
+        let container = UIView(frame: CGRect(origin: .zero,
+                                             size: CGSize(width: 100, height: 100)))
+        let view = UIView.autoLayout
+        container.addSubview(view)
+        
+        var top: NSLayoutConstraint!
+        var bottom: NSLayoutConstraint!
+        var leading: NSLayoutConstraint!
+        var trailing: NSLayoutConstraint!
+        
+        // when
+        
+        view.activate {
+            leading = $0.leadingAnchor == container.leadingAnchor + 10
+            trailing = $0.trailingAnchor == container.trailingAnchor + -10
+            top = $0.topAnchor == container.topAnchor + 10
+            bottom = $0.bottomAnchor == container.bottomAnchor + -10
+        }
+        
+        // then
+        XCTAssertTrue(top.isActive)
+        XCTAssertTrue(bottom.isActive)
+        XCTAssertTrue(leading.isActive)
+        XCTAssertTrue(trailing.isActive)
+    }
+}
