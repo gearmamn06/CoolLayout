@@ -51,13 +51,19 @@ extension NSCoding where Self: UIView {
 //    func apply()
     
     @discardableResult
-    public static func & (view: Self, next: (UIView) -> Void) -> Self {
+    public static func << (_ view: Self, decorating: (Self) -> Void) -> Self {
+        decorating(view)
+        return view
+    }
+    
+    @discardableResult
+    public static func + (view: Self, next: (UIView) -> Void) -> Self {
         next(view)
         return view
     }
     
     @discardableResult
-    public static func & (view: Self, next: (Self) -> Void) -> Self {
+    public static func + (view: Self, next: (Self) -> Void) -> Self {
         next(view)
         return view
     }
