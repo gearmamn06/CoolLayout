@@ -134,11 +134,3 @@ dependencies: [
     .package(url: "https://github.com/gearmamn06/CoolLayout.git", from: "1.0.0")
 ]
 ```
-
-## Author
-
-gearmamn06@gmail.com
-
-## License
-
-CoolLayout is available under the MIT license. See the LICENSE file for more info.
