@@ -25,6 +25,7 @@ extension NSCoding where Self: UIView {
     
     public init(autoLayout: ((Self) -> Void)...) {
         self.init()
+        self.translatesAutoresizingMaskIntoConstraints = false
         autoLayout.forEach {
             $0(self)
         }
@@ -32,6 +33,7 @@ extension NSCoding where Self: UIView {
     
     public init(autoLayout: [((Self) -> Void)]) {
         self.init()
+        self.translatesAutoresizingMaskIntoConstraints = false
         autoLayout.forEach {
             $0(self)
         }
