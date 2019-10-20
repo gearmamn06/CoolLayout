@@ -42,7 +42,7 @@ class StackEmbedViewController: UIViewController {
                 $0.numberOfLines = 1
                 $0.text = "row: \(value)"
             }
-            label.apply([
+            .apply([
                 Deco.Label.headLine,
                 Deco.Label.centerAlgin
             ])
