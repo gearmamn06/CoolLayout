@@ -49,8 +49,10 @@ class TableEmbedViewController: UIViewController {
     private let tableView = UITableView.lazy {
         let tv = UITableView()
         tv.translatesAutoresizingMaskIntoConstraints = false
-        tv.backgroundColor = UIColor.white
         return tv
+    }
+    .apply {
+        $0.backgroundColor = UIColor.white
     }
     
     override func viewDidLoad() {
