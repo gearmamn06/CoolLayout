@@ -46,12 +46,7 @@ class TableEmbedViewController: UIViewController {
     
     var viewModel: ViewModel!
     
-    private let tableView = UITableView.lazy {
-        let tv = UITableView()
-        tv.translatesAutoresizingMaskIntoConstraints = false
-        return tv
-    }
-    .apply {
+    private let tableView = UITableView {
         $0.backgroundColor = UIColor.white
     }
     
