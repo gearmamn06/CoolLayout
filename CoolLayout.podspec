@@ -8,8 +8,8 @@
 
 Pod::Spec.new do |s|
   s.name             = 'CoolLayout'
-  s.version          = '0.1.0'
-  s.summary          = 'Easy and simple way to apply NSLayoutConstraint.'
+  s.version          = '1.0.2'
+  s.summary          = 'Easy and simple way to build a view only codes'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
 #   * Write the description between the DESC delimiters below.
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
-  s.description      = "This is long temp description. A short description of CoolLayout."
+  s.description      = "CoolLayout eliminates boilerplate codes. Let's create and lay out views more concisely and explicitly."
 
   s.homepage         = 'https://github.com/gearmamn06/CoolLayout'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
