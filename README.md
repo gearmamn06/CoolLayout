@@ -85,20 +85,6 @@ let label = UILabel {
 .apply(Deco.View.yellowWithDarkBorder)
 ```
 
-## Lazy initializer
-Use lazy initializer when no empty constructor is available, such as a UICollectionview.
-```swift
-let collectionView = UICollectionView.lazy {
-    let collectionview = UICollectionView(frame: .zero,
-                                          collectionViewLayout: UICollectionViewLayout())
-    collectionview.translatesAutoresizingMaskIntoConstraints = false
-    return collectionview
-}
-.apply {
-    $0.backgroundColor = UIColor.white
-}
-```
-
 ## NSLayoutConstraint
 Apply and activate NSLayoutConstraint in a more readable way.
 ```swift
@@ -120,17 +106,17 @@ label.activate {
 ### CocoaPods
 
 ```ruby
-pod 'CoolLayout', '1.0.2'
+pod 'CoolLayout', '1.0.3'
 ```
 
 ### Carthage
 ```ogdl
-github "gearmamn06/CoolLayout" "1.0.2"
+github "gearmamn06/CoolLayout" "1.0.3"
 ```
 
 ### Swift Package Manager
 ```swift
 dependencies: [
-    .package(url: "https://github.com/gearmamn06/CoolLayout.git", from: "1.0.2")
+    .package(url: "https://github.com/gearmamn06/CoolLayout.git", from: "1.0.3")
 ]
 ```
