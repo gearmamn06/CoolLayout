@@ -57,6 +57,4 @@ public extension NSLayoutConstraint {
         
         return newConstraint
     }
-    
 }
-

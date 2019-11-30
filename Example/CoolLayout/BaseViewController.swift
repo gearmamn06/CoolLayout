@@ -17,7 +17,7 @@ class BaseViewController: UIViewController {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .center
         label.numberOfLines = 0
-        label.text = "Click the button below to open next viewController"
+        label.text = "Click the button below to open next viewController\n(The current screen is written in the basic way of writing the view in code.)"
         return label
     }()
     
@@ -36,6 +36,14 @@ class BaseViewController: UIViewController {
         button.setTitleColor(UIColor.systemBlue, for: .normal)
         return button
     }()
+    
+    private var showCircleButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("Circle", for: .normal)
+        button.setTitleColor(UIColor.systemBlue, for: .normal)
+        return button
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,7 +53,7 @@ class BaseViewController: UIViewController {
         NSLayoutConstraint.activate([
             explainLabel.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 20),
             explainLabel.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -20),
-            explainLabel.centerYAnchor.constraint(equalTo: self.view.centerYAnchor)
+            explainLabel.centerYAnchor.constraint(equalTo: self.view.centerYAnchor, constant: -40)
         ])
         
         self.view.addSubview(showStackButton)
@@ -60,9 +68,17 @@ class BaseViewController: UIViewController {
             showTableButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor)
         ])
         
+        self.view.addSubview(showCircleButton)
+        NSLayoutConstraint.activate([
+            showCircleButton.topAnchor.constraint(equalTo: self.showTableButton.bottomAnchor, constant: 20),
+            showCircleButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor)
+        ])
+        
         showStackButton.addTarget(self, action: #selector(openStackEmbedViewController), for: .touchUpInside)
         
         showTableButton.addTarget(self, action: #selector(openTableViewEmbedViewController), for: .touchUpInside)
+        
+        showCircleButton.addTarget(self, action: #selector(openCircleViewController), for: .touchUpInside)
     }
 
     
@@ -79,6 +95,11 @@ class BaseViewController: UIViewController {
             let items = (0..<10).map{ $0 }
             $0.viewModel = ViewModel(cellColor: UIColor.red, items: items)
         }
+        openNext(nextViewController: dest)
+    }
+    
+    @objc private func openCircleViewController() {
+        let dest = CircleViewController()
         openNext(nextViewController: dest)
     }
     
