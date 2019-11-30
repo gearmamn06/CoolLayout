@@ -91,21 +91,6 @@ extension UIView_ExtensionTest {
         XCTAssertEqual(label.backgroundColor, UIColor.green)
         XCTAssertEqual(label.font, UIFont.systemFont(ofSize: 20))
     }
-    
-    func test_lazyInitialization() {
-        // given
-        let frame = CGRect(origin: CGPoint(x: 100, y: 100),
-                           size: CGSize(width: 100, height: 100))
-        
-        // when
-        let lazyView = UIView.lazy {
-            return UIView(frame: frame)
-        }
-        
-        // then
-        XCTAssertEqual(lazyView.frame.origin, frame.origin)
-        XCTAssertEqual(lazyView.frame.size, frame.size)
-    }
 }
 
 

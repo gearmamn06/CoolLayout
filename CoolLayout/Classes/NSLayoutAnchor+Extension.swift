@@ -30,14 +30,16 @@ fileprivate extension NSLayoutConstraint {
 extension NSLayoutXAxisAnchor {
     
     @discardableResult
-    public func equal(_ otherAnchor: NSLayoutXAxisAnchor) -> NSLayoutConstraint {
+    public func equal(_ otherAnchor: NSLayoutXAxisAnchor, priority: Float = 1000) -> NSLayoutConstraint {
         return self.constraint(equalTo: otherAnchor)
+            .priority(value: priority)
             .activeOrNot()
     }
     
     @discardableResult
-    public func equal(_ half: HalfNSLayoutConstraint<NSLayoutXAxisAnchor>) -> NSLayoutConstraint {
+    public func equal(_ half: HalfNSLayoutConstraint<NSLayoutXAxisAnchor>, priority: Float = 1000) -> NSLayoutConstraint {
         return self.constraint(equalTo: half.referenceAnchor, constant: half.constant)
+            .priority(value: priority)
             .activeOrNot()
     }
 }
@@ -45,14 +47,16 @@ extension NSLayoutXAxisAnchor {
 extension NSLayoutYAxisAnchor {
     
     @discardableResult
-    public func equal(_ otherAnchor: NSLayoutYAxisAnchor) -> NSLayoutConstraint {
+    public func equal(_ otherAnchor: NSLayoutYAxisAnchor, priority: Float = 1000) -> NSLayoutConstraint {
         return self.constraint(equalTo: otherAnchor)
+            .priority(value: priority)
             .activeOrNot()
     }
     
     @discardableResult
-    public func equal(_ half: HalfNSLayoutConstraint<NSLayoutYAxisAnchor>) -> NSLayoutConstraint {
+    public func equal(_ half: HalfNSLayoutConstraint<NSLayoutYAxisAnchor>, priority: Float = 1000) -> NSLayoutConstraint {
         return self.constraint(equalTo: half.referenceAnchor, constant: half.constant)
+            .priority(value: priority)
             .activeOrNot()
     }
 }
@@ -60,23 +64,26 @@ extension NSLayoutYAxisAnchor {
 extension NSLayoutDimension {
     
     @discardableResult
-    public func equal(_ constant: CGFloat) -> NSLayoutConstraint {
+    public func equal(_ constant: CGFloat, priority: Float = 1000) -> NSLayoutConstraint {
         return self.constraint(equalToConstant: constant)
-        .activeOrNot()
-    }
-    
-    @discardableResult
-    public func equal(_ otherAnchor: NSLayoutDimension) -> NSLayoutConstraint {
-        return self.constraint(equalTo: otherAnchor)
+            .priority(value: priority)
             .activeOrNot()
     }
     
     @discardableResult
-    public func equal(_ half: HalfNSLayoutConstraint<NSLayoutDimension>) -> NSLayoutConstraint {
+    public func equal(_ otherAnchor: NSLayoutDimension, priority: Float = 1000) -> NSLayoutConstraint {
+        return self.constraint(equalTo: otherAnchor)
+            .priority(value: priority)
+            .activeOrNot()
+    }
+    
+    @discardableResult
+    public func equal(_ half: HalfNSLayoutConstraint<NSLayoutDimension>, priority: Float = 1000) -> NSLayoutConstraint {
         guard let layoutDimension = half.referenceAnchor as? NSLayoutDimension else {
             fatalError()
         }
         return self.constraint(equalTo: layoutDimension, multiplier: half.multiplier, constant: half.constant)
+            .priority(value: priority)
             .activeOrNot()
     }
 }
@@ -85,14 +92,16 @@ extension NSLayoutDimension {
 extension NSLayoutXAxisAnchor {
     
     @discardableResult
-    public func greaterThan(orEqual otherAnchor: NSLayoutXAxisAnchor) -> NSLayoutConstraint {
+    public func greaterThan(orEqual otherAnchor: NSLayoutXAxisAnchor, priority: Float = 1000) -> NSLayoutConstraint {
         return self.constraint(greaterThanOrEqualTo: otherAnchor)
+            .priority(value: priority)
             .activeOrNot()
     }
     
     @discardableResult
-    public func greaterThan(orEqual half: HalfNSLayoutConstraint<NSLayoutXAxisAnchor>) -> NSLayoutConstraint {
+    public func greaterThan(orEqual half: HalfNSLayoutConstraint<NSLayoutXAxisAnchor>, priority: Float = 1000) -> NSLayoutConstraint {
         return self.constraint(greaterThanOrEqualTo: half.referenceAnchor, constant: half.constant)
+            .priority(value: priority)
             .activeOrNot()
     }
 }
@@ -100,14 +109,16 @@ extension NSLayoutXAxisAnchor {
 extension NSLayoutYAxisAnchor {
     
     @discardableResult
-    public func greaterThan(orEqual otherAnchor: NSLayoutYAxisAnchor) -> NSLayoutConstraint {
+    public func greaterThan(orEqual otherAnchor: NSLayoutYAxisAnchor, priority: Float = 1000) -> NSLayoutConstraint {
         return self.constraint(greaterThanOrEqualTo: otherAnchor)
+            .priority(value: priority)
             .activeOrNot()
     }
     
     @discardableResult
-    public func greaterThan(orEqual half: HalfNSLayoutConstraint<NSLayoutYAxisAnchor>) -> NSLayoutConstraint {
+    public func greaterThan(orEqual half: HalfNSLayoutConstraint<NSLayoutYAxisAnchor>, priority: Float = 1000) -> NSLayoutConstraint {
         return self.constraint(greaterThanOrEqualTo: half.referenceAnchor, constant: half.constant)
+            .priority(value: priority)
             .activeOrNot()
     }
 }
@@ -115,24 +126,27 @@ extension NSLayoutYAxisAnchor {
 extension NSLayoutDimension {
     
     @discardableResult
-    public func greaterThan(orEqual constant: CGFloat) -> NSLayoutConstraint {
+    public func greaterThan(orEqual constant: CGFloat, priority: Float = 1000) -> NSLayoutConstraint {
         return self.constraint(greaterThanOrEqualToConstant: constant)
+        .priority(value: priority)
         .activeOrNot()
     }
     
     @discardableResult
-    public func greaterThan(orEqual otherAnchor: NSLayoutDimension) -> NSLayoutConstraint {
+    public func greaterThan(orEqual otherAnchor: NSLayoutDimension, priority: Float = 1000) -> NSLayoutConstraint {
         return self.constraint(greaterThanOrEqualTo: otherAnchor)
+            .priority(value: priority)
             .activeOrNot()
     }
     
     @discardableResult
-    public func greaterThan(orEqual half: HalfNSLayoutConstraint<NSLayoutDimension>) -> NSLayoutConstraint {
+    public func greaterThan(orEqual half: HalfNSLayoutConstraint<NSLayoutDimension>, priority: Float = 1000) -> NSLayoutConstraint {
         guard let layoutDimension = half.referenceAnchor as? NSLayoutDimension else {
             fatalError()
         }
         return self.constraint(greaterThanOrEqualTo: layoutDimension,
                                multiplier: half.multiplier, constant: half.constant)
+            .priority(value: priority)
             .activeOrNot()
     }
 }
@@ -141,14 +155,16 @@ extension NSLayoutDimension {
 extension NSLayoutXAxisAnchor {
     
     @discardableResult
-    public func lessThan(orEqual otherAnchor: NSLayoutXAxisAnchor) -> NSLayoutConstraint {
+    public func lessThan(orEqual otherAnchor: NSLayoutXAxisAnchor, priority: Float = 1000) -> NSLayoutConstraint {
         return self.constraint(lessThanOrEqualTo: otherAnchor)
+            .priority(value: priority)
             .activeOrNot()
     }
     
     @discardableResult
-    public func lessThan(orEqual half: HalfNSLayoutConstraint<NSLayoutXAxisAnchor>) -> NSLayoutConstraint {
+    public func lessThan(orEqual half: HalfNSLayoutConstraint<NSLayoutXAxisAnchor>, priority: Float = 1000) -> NSLayoutConstraint {
         return self.constraint(lessThanOrEqualTo: half.referenceAnchor, constant: half.constant)
+            .priority(value: priority)
             .activeOrNot()
     }
 }
@@ -156,14 +172,16 @@ extension NSLayoutXAxisAnchor {
 extension NSLayoutYAxisAnchor {
     
     @discardableResult
-    public func lessThan(orEqual otherAnchor: NSLayoutYAxisAnchor) -> NSLayoutConstraint {
+    public func lessThan(orEqual otherAnchor: NSLayoutYAxisAnchor, priority: Float = 1000) -> NSLayoutConstraint {
         return self.constraint(lessThanOrEqualTo: otherAnchor)
+            .priority(value: priority)
             .activeOrNot()
     }
     
     @discardableResult
-    public func lessThan(orEqual half: HalfNSLayoutConstraint<NSLayoutYAxisAnchor>) -> NSLayoutConstraint {
+    public func lessThan(orEqual half: HalfNSLayoutConstraint<NSLayoutYAxisAnchor>, priority: Float = 1000) -> NSLayoutConstraint {
         return self.constraint(lessThanOrEqualTo: half.referenceAnchor, constant: half.constant)
+            .priority(value: priority)
             .activeOrNot()
     }
 }
@@ -171,24 +189,27 @@ extension NSLayoutYAxisAnchor {
 extension NSLayoutDimension {
     
     @discardableResult
-    public func lessThan(orEqual constant: CGFloat) -> NSLayoutConstraint {
+    public func lessThan(orEqual constant: CGFloat, priority: Float = 1000) -> NSLayoutConstraint {
         return self.constraint(lessThanOrEqualToConstant: constant)
-        .activeOrNot()
-    }
-    
-    @discardableResult
-    public func lessThan(orEqual otherAnchor: NSLayoutDimension) -> NSLayoutConstraint {
-        return self.constraint(lessThanOrEqualTo: otherAnchor)
+            .priority(value: priority)
             .activeOrNot()
     }
     
     @discardableResult
-    public func lessThan(orEqual half: HalfNSLayoutConstraint<NSLayoutDimension>) -> NSLayoutConstraint {
+    public func lessThan(orEqual otherAnchor: NSLayoutDimension, priority: Float = 1000) -> NSLayoutConstraint {
+        return self.constraint(lessThanOrEqualTo: otherAnchor)
+            .priority(value: priority)
+            .activeOrNot()
+    }
+    
+    @discardableResult
+    public func lessThan(orEqual half: HalfNSLayoutConstraint<NSLayoutDimension>, priority: Float = 1000) -> NSLayoutConstraint {
         guard let layoutDimension = half.referenceAnchor as? NSLayoutDimension else {
             fatalError()
         }
         return self.constraint(lessThanOrEqualTo: layoutDimension,
                                multiplier: half.multiplier, constant: half.constant)
+            .priority(value: priority)
             .activeOrNot()
     }
 }
