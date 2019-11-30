@@ -105,10 +105,13 @@ extension UIView {
     }
     
     
-    public func activate(_ buildConstraint: (UIView) -> Void) {
+    @discardableResult
+    public func activate(_ buildConstraint: (UIView) -> Void) -> UIView {
         let key = self.hash
         FlagHolder.flagMap[key] = true
         buildConstraint(self)
         FlagHolder.flagMap[key] = false
+        
+        return self
     }
 }
