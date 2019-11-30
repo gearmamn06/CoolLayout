@@ -96,6 +96,18 @@ label.activate {
     $0.bottomAnchor == self.bottomAnchor + -30
 }
 ```
+You can also create an NSLayoutConstraint with a regular function expression.
+```swift
+self.label.apply {
+    $0.text = "This method builds faster than using a custom operator."
+}
+.activate {
+    $0.centerXAnchor.equal(self.view.centerXAnchor)
+    $0.topAnchor.equal(self.circleView.bottomAnchor + 50)
+    $0.leadingAnchor.greaterThan(orEqual: self.view.leadingAnchor + 20)
+    $0.trailingAnchor.lessThan(orEqual: self.view.trailingAnchor + -20)
+}
+```
 
 ## Requirements
 - iOS 9.0
@@ -106,17 +118,20 @@ label.activate {
 ### CocoaPods
 
 ```ruby
-pod 'CoolLayout', '1.0.3'
+pod 'CoolLayout', '1.1.0'
 ```
 
 ### Carthage
 ```ogdl
-github "gearmamn06/CoolLayout" "1.0.3"
+github "gearmamn06/CoolLayout" "1.1.0"
 ```
 
 ### Swift Package Manager
 ```swift
 dependencies: [
-    .package(url: "https://github.com/gearmamn06/CoolLayout.git", from: "1.0.3")
+    .package(url: "https://github.com/gearmamn06/CoolLayout.git", from: "1.1.0")
 ]
 ```
+
+## Contributor
+wade.hawk, riley.kang 
