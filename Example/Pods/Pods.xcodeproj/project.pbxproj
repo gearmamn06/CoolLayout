@@ -12,6 +12,7 @@
 		4C55F0400763AB3602FC177272E5C498 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
 		7DA8FEF0C0EED6FC0CB5075830752D1D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
 		7F56EA0DD2E410E2F9C01E920F46C6D1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		9B8CA0792392669E00C4628D /* NSLayoutAnchor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8CA0782392669E00C4628D /* NSLayoutAnchor+Extension.swift */; };
 		BB622FCCD2B4ACA8A20439E2241442ED /* CoolLayout-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D0C64B85B19736B85A6F6D3EFD205CE /* CoolLayout-dummy.m */; };
 		BE39F7AFC7651EE13681765F1F155FC1 /* Pods-CoolLayout_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C220EF70F99DE0B2BE18B482E0738AA /* Pods-CoolLayout_Tests-dummy.m */; };
 		C2692563235ADCF1002FA329 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2692562235ADCF1002FA329 /* UIView+Extension.swift */; };
@@ -59,6 +60,7 @@
 		7D0C64B85B19736B85A6F6D3EFD205CE /* CoolLayout-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CoolLayout-dummy.m"; sourceTree = "<group>"; };
 		8D255A7A7C14745D98B10403E987A641 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		992DCF5B28898428EE798DBABDF570BC /* CoolLayout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CoolLayout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B8CA0782392669E00C4628D /* NSLayoutAnchor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "NSLayoutAnchor+Extension.swift"; path = "CoolLayout/Classes/NSLayoutAnchor+Extension.swift"; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9F2BA86F544120AC42C71688855F9C2A /* CoolLayout.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = CoolLayout.modulemap; sourceTree = "<group>"; };
 		A6A839BF1F81E606F72EAEFB637B5DBE /* CoolLayout-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "CoolLayout-Info.plist"; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 			children = (
 				2B925B1823531C4D004FB94F /* NSLayoutConstraint+Extension.swift */,
 				2B925B1A23531C6D004FB94F /* NSLayoutConstraintFormula.swift */,
+				9B8CA0782392669E00C4628D /* NSLayoutAnchor+Extension.swift */,
 				C2692562235ADCF1002FA329 /* UIView+Extension.swift */,
 				C2692568235B3AFE002FA329 /* UIViewController+Extension.swift */,
 				3B68384CAB0D0D5AF90E5B159B9B87AF /* Pod */,
@@ -390,6 +393,7 @@
 				BB622FCCD2B4ACA8A20439E2241442ED /* CoolLayout-dummy.m in Sources */,
 				2B925B1923531C4D004FB94F /* NSLayoutConstraint+Extension.swift in Sources */,
 				C2692563235ADCF1002FA329 /* UIView+Extension.swift in Sources */,
+				9B8CA0792392669E00C4628D /* NSLayoutAnchor+Extension.swift in Sources */,
 				C2692569235B3AFE002FA329 /* UIViewController+Extension.swift in Sources */,
 				2B925B1B23531C6D004FB94F /* NSLayoutConstraintFormula.swift in Sources */,
 			);

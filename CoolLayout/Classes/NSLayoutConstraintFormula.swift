@@ -125,7 +125,6 @@ public func == (_ target: NSLayoutDimension, _ constant: CGFloat) -> NSLayoutCon
 }
 
 
-
 // MARK: - Less than ro Equal
 
 @discardableResult
@@ -203,3 +202,13 @@ public func >= (_ target: NSLayoutDimension,
         .activeOrNot()
 }
 
+
+// MARK: set priority
+
+extension NSLayoutConstraint {
+    @discardableResult
+    public func priority(value: Float) -> NSLayoutConstraint {
+        self.priority = UILayoutPriority(rawValue: value)
+        return self
+    }
+}

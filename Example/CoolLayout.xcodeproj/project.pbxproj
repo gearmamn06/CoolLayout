@@ -14,6 +14,7 @@
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACEC1AFB9204008FA782 /* NSLayoutConstraintFormulaTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* NSLayoutConstraintFormulaTest.swift */; };
+		9B8CA07B2392694600C4628D /* CircleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8CA07A2392694600C4628D /* CircleViewController.swift */; };
 		C2692565235B388C002FA329 /* StackEmbedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2692564235B388C002FA329 /* StackEmbedViewController.swift */; };
 		C269256B235B7565002FA329 /* TableEmbedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C269256A235B7565002FA329 /* TableEmbedViewController.swift */; };
 		C269256D235B75B3002FA329 /* Deco.swift in Sources */ = {isa = PBXBuildFile; fileRef = C269256C235B75B3002FA329 /* Deco.swift */; };
@@ -48,6 +49,7 @@
 		607FACEB1AFB9204008FA782 /* NSLayoutConstraintFormulaTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSLayoutConstraintFormulaTest.swift; sourceTree = "<group>"; };
 		748A55CC5C1078C652D99422 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		950B6372A3C8FC423BED9004 /* CoolLayout.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = CoolLayout.podspec; path = ../CoolLayout.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9B8CA07A2392694600C4628D /* CircleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleViewController.swift; sourceTree = "<group>"; };
 		BC29543652C1D539D016C224 /* Pods_CoolLayout_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoolLayout_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2692564235B388C002FA329 /* StackEmbedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackEmbedViewController.swift; sourceTree = "<group>"; };
 		C269256A235B7565002FA329 /* TableEmbedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableEmbedViewController.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 				607FACD71AFB9204008FA782 /* BaseViewController.swift */,
 				C2692564235B388C002FA329 /* StackEmbedViewController.swift */,
 				C269256A235B7565002FA329 /* TableEmbedViewController.swift */,
+				9B8CA07A2392694600C4628D /* CircleViewController.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
@@ -343,6 +346,7 @@
 			files = (
 				C2692565235B388C002FA329 /* StackEmbedViewController.swift in Sources */,
 				C269256B235B7565002FA329 /* TableEmbedViewController.swift in Sources */,
+				9B8CA07B2392694600C4628D /* CircleViewController.swift in Sources */,
 				C269256D235B75B3002FA329 /* Deco.swift in Sources */,
 				607FACD81AFB9204008FA782 /* BaseViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
