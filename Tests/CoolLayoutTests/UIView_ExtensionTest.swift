@@ -91,6 +91,21 @@ extension UIView_ExtensionTest {
         XCTAssertEqual(label.backgroundColor, UIColor.green)
         XCTAssertEqual(label.font, UIFont.systemFont(ofSize: 20))
     }
+    
+    func test_initViewWithFunctionBuilder() {
+        // given
+        // when
+        let label = UILabel.build {
+            self.textColor
+            self.font
+            self.backgroundColor
+        }
+
+        // then
+        XCTAssertEqual(label.textColor, UIColor.red)
+        XCTAssertEqual(label.backgroundColor, UIColor.green)
+        XCTAssertEqual(label.font, UIFont.systemFont(ofSize: 20))
+    }
 }
 
 
@@ -205,6 +220,23 @@ extension UIView_ExtensionTest {
         // then
         XCTAssertEqual(label.textColor, UIColor.red)
         XCTAssertEqual(label.backgroundColor, UIColor.black)
+    }
+    
+    func test_applyDecorationUsingFunctionBuilder() {
+        // Arrange
+        let label = UILabel.autoLayout
+
+        // Act
+        label.apply {
+            self.textColor
+            self.font
+            self.backgroundColor
+        }
+
+        // Assert
+        XCTAssertEqual(label.textColor, UIColor.red)
+        XCTAssertEqual(label.backgroundColor, UIColor.green)
+        XCTAssertEqual(label.font, UIFont.systemFont(ofSize: 20))
     }
 }
 
