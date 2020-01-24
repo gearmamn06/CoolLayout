@@ -56,11 +56,18 @@ enum Deco {
     }
 }
 ...
-let label = UILabel(autoLayout: [
+let label1 = UILabel.build {
+    Deco.Label.headLine,
+    Deco.Label.centerAlgin
+}
+
+let label2 = UILabel(autoLayout: [
     Deco.Label.headLine,
     Deco.Label.centerAlgin
 ])
+
 self.view.addSubview(label)
+self.view.addSubview(label2)
 
 ```
 Also initialize the UIViewController using an initialization closure. This is very easy to inject dependencies.
@@ -78,10 +85,14 @@ let label = UILabel {
     $0.numberOfLines = 1
     $0.text = "row: \(value)"
 }
-.apply([
-    Deco.Label.headLine,
+.apply {
+    Deco.Label.headLine
     Deco.Label.centerAlgin
-])
+}
+// .apply([
+//     Deco.Label.headLine,
+//     Deco.Label.centerAlgin
+// ])
 .apply(Deco.View.yellowWithDarkBorder)
 ```
 
@@ -118,18 +129,18 @@ self.label.apply {
 ### CocoaPods
 
 ```ruby
-pod 'CoolLayout', '1.1.1'
+pod 'CoolLayout', '1.2.0'
 ```
 
 ### Carthage
 ```ogdl
-github "gearmamn06/CoolLayout" "1.1.1"
+github "gearmamn06/CoolLayout" "1.2.0"
 ```
 
 ### Swift Package Manager
 ```swift
 dependencies: [
-    .package(url: "https://github.com/gearmamn06/CoolLayout.git", from: "1.1.1")
+    .package(url: "https://github.com/gearmamn06/CoolLayout.git", from: "1.2.0")
 ]
 ```
 
