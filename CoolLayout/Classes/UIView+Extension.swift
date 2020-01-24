@@ -90,6 +90,44 @@ extension NSCoding where Self: UIView {
     }
 }
 
+// MARK: using DecoratingBuilder
+
+private func + <V: UIView>(lhs: @escaping (V) -> Void, rhs: @escaping (V) -> Void) -> (V) -> Void {
+    return { view in
+        lhs(view)
+        rhs(view)
+    }
+}
+
+
+@_functionBuilder
+public struct DecoratingBuilder<V: UIView> {
+
+    // build time: 24ms
+    public static func buildBlock(_ decoratings: ((V) -> Void)...) -> (V) -> Void {
+        let empty: (V) -> Void = { _ in }
+        return decoratings.reduce(empty, { (acc: @escaping (V) -> Void, decoration: @escaping (V) -> Void ) -> (V) -> Void in
+            return acc + decoration
+        })
+    }
+}
+
+extension NSCoding where Self: UIView {
+
+    public static func build(@DecoratingBuilder<Self> _ builder: () -> (Self) -> Void) -> Self {
+        let decorating = builder()
+        let view = Self.init()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        decorating(view)
+        return view
+    }
+
+    public func apply(@DecoratingBuilder<Self> _ builder: () -> (Self) -> Void) {
+        let decorating = builder()
+        decorating(self)
+    }
+}
+
 
 // MARK: - extension for active constraints
 

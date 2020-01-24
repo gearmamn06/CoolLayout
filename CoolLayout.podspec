@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'CoolLayout'
-  s.version          = '1.1.1'
+  s.version          = '1.2.0'
   s.summary          = 'Easy and simple way to build a view only codes'
 
 # This description is used to generate tags and improve search results.
